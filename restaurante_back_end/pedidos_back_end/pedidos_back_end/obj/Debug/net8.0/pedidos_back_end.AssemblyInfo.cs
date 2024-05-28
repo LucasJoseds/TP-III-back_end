@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pedidos_back_end")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6db1c9c0922d858f0f1c76f733778d362ae84ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("pedidos_back_end")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pedidos_back_end")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
