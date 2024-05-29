@@ -4564,11 +4564,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\07055338166\\Documents\\TP-III-\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
+      "projectUniqueName": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
       "projectName": "pedidos_back_end",
-      "projectPath": "C:\\Users\\07055338166\\Documents\\TP-III-\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
+      "projectPath": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
       "packagesPath": "C:\\Users\\07055338166\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\07055338166\\Documents\\TP-III-\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\obj\\",
+      "outputPath": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\07055338166\\AppData\\Roaming\\NuGet\\NuGet.Config"

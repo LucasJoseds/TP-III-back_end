@@ -21,7 +21,7 @@ namespace pedidos_back_end.Controllers
 
 
         [HttpPost("adicionar")]
-        public Task<Cardapio> Adicionar(Cardapio c)
+        public Task<Cardapio> Adicionar([FromForm]Cardapio c)
         {
             return _service.Cadastrar(c);
 

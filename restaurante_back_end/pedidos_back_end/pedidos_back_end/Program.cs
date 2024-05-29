@@ -25,7 +25,26 @@ builder.Services.AddControllers().AddJsonOptions(x =>
     x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost3000",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowLocalhost3000");
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

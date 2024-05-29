@@ -13,6 +13,6 @@ namespace pedidos_back_end.Model
         public string? Nome { get; set; }
         public string? Descricao { get; set; }
         public float Preco { get; set; }
-       public string? ImagemCardapio { get; set; }
+        public string? ImagemCardapio { get; set; }
     }
 }

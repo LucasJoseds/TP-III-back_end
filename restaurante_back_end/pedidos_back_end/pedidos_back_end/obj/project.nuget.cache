@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I3/y5CZ+v/Q=",
+  "dgSpecHash": "upFe2C9EwV8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\07055338166\\Documents\\TP-III-\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
+  "projectFilePath": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\07055338166\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\07055338166\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

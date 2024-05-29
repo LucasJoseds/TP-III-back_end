@@ -21,7 +21,7 @@ namespace pedidos_back_end.Controllers
         }
 
         [HttpPost("adicionar")]
-        public async Task<Cliente> Adicionar(Cliente cliente){
+        public async Task<Cliente> Adicionar([FromForm]Cliente cliente){
 
             return await _service.AdicionarCliente(cliente);       
         }
