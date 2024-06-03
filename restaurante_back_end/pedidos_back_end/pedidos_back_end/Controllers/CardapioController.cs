@@ -32,5 +32,16 @@ namespace pedidos_back_end.Controllers
 
             return _service.ListarTodos();
         }
+
+        [HttpGet]
+        public async Task<ActionResult<Cardapio>> BuscarPorId([FromQuery]int Id){
+
+            var cardapio = await _service.BuscarPorId(Id);
+
+            if (cardapio == null){
+                return NotFound(new { message = "Cardápio não encontrado" });
+            }
+            return cardapio;
+        }
     }
 }

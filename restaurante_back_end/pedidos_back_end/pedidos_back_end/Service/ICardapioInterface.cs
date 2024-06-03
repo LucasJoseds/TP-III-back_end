@@ -12,6 +12,8 @@ namespace pedidos_back_end.Service
 
         Task<Cardapio> Cadastrar(Cardapio nCardapio);
 
+        Task<Cardapio>BuscarPorId(int Id);
+
         
         
     }
