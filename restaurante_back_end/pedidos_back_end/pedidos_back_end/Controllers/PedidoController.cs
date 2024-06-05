@@ -20,7 +20,7 @@ namespace pedidos_back_end.Controllers
 
 
         [HttpPost]
-       public async Task<ActionResult<Pedido>> CriarPedido([FromBody]Pedido pedido){
+       public async Task<ActionResult<Pedido>> CriarPedido([FromForm]Pedido pedido){
 
         return  await _service.CriarPedido(pedido);
 
