@@ -4559,24 +4559,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\07055338166\\.nuget\\packages\\": {}
+    "C:\\Users\\lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
       "projectName": "pedidos_back_end",
-      "projectPath": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
-      "packagesPath": "C:\\Users\\07055338166\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\07055338166\\Documents\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\obj\\",
+      "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\pedidos_back_end.csproj",
+      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\TP-III-back_end\\restaurante_back_end\\pedidos_back_end\\pedidos_back_end\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\07055338166\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4642,7 +4644,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

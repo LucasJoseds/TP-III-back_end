@@ -25,6 +25,7 @@ namespace pedidos_back_end.Service
             var cliente = await _context.Clientes.FindAsync(pedido.ClienteId);
             var novaLista = new List<ItemPedido>();
 
+        
             foreach (ItemPedido item in pedido.Itens)
             {
                 var cardapio = await _cardapioService.BuscarPorId(item.CardapioId);
