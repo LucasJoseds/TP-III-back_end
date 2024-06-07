@@ -17,8 +17,7 @@ namespace pedidos_back_end.Model
         public int CardapioId { get; set; }
 
         [ForeignKey("CardapioId")]
-
-        [JsonIgnore]
+ 
         public Cardapio? Cardapio { get; set; }  
 
         public int PedidoId { get; set; }

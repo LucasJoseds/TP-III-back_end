@@ -25,6 +25,7 @@ namespace pedidos_back_end.Service
             var cliente = await _context.Clientes.FindAsync(pedido.ClienteId);
             var novaLista = new List<ItemPedido>();
 
+
             foreach (ItemPedido item in pedido.Itens)
             {
                 var cardapio = await _cardapioService.BuscarPorId(item.CardapioId);
@@ -55,19 +56,18 @@ namespace pedidos_back_end.Service
 
         public IEnumerable<Pedido> ListarPedidos()
         {
-            var pedidos = _context.Pedidos.ToList();
-
-            foreach (var pedido in pedidos)
-            {
-                _context.Entry(pedido).Collection(p => p.Itens).Load();
-            }
-
-            return pedidos;
+            var pedidos = _context.Pedidos
+                          .Include(p => p.Itens)
+                          .ThenInclude(i => i.Cardapio)
+                          .ToList();
+                          return pedidos;
         }
 
-        public async Task<List<Pedido>> ListarPedidosCliente(int IdDoCliente)
+        public async Task<IEnumerable<Pedido>> ListarPedidosCliente(int IdDoCliente)
         {
-            return await _context.Pedidos.ToListAsync();
+            var pedidos = await _context.Pedidos.Where(p => p.ClienteId == IdDoCliente).Include(p => p.Itens).ThenInclude(i => i.Cardapio).ToListAsync();
+          
+            return pedidos;
         }
     }
 }

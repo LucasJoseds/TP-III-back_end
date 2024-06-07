@@ -12,7 +12,7 @@ namespace pedidos_back_end.Service
     {
         Task<Pedido> CriarPedido(Pedido pedido);
         IEnumerable<Pedido> ListarPedidos();
-        Task<List<Pedido>> ListarPedidosCliente(int IdDoCliente);
+       Task<IEnumerable<Pedido>> ListarPedidosCliente(int IdDoCliente);
 
          
     }

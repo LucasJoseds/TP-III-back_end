@@ -20,7 +20,7 @@ namespace pedidos_back_end.Controllers
 
 
         [HttpPost]
-       public async Task<ActionResult<Pedido>> CriarPedido([FromForm]Pedido pedido){
+       public async Task<ActionResult<Pedido>> CriarPedido([FromBody]Pedido pedido){
 
         return  await _service.CriarPedido(pedido);
 
@@ -31,6 +31,13 @@ namespace pedidos_back_end.Controllers
             var pedidos = _service.ListarPedidos();
 
         return Ok(pedidos);
+       }
+
+
+       [HttpGet("cliente")]
+       public async Task<IEnumerable<Pedido>> ListarPedidosDoCliente([FromQuery]int idCliente){
+
+        return await _service.ListarPedidosCliente(idCliente);
        }
 
 
