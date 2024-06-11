@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using pedidos_back_end.Data;
 using pedidos_back_end.Model;
 
@@ -29,6 +30,11 @@ namespace pedidos_back_end.Service
            return await _context.Clientes.FindAsync(Id);
         }
 
-      
+        public async Task<Cliente> BuscarPorEmail(string email)
+        {
+            return await _context.Clientes.FirstOrDefaultAsync(c => c.Email == email);
+        }
+
+
     }
 }

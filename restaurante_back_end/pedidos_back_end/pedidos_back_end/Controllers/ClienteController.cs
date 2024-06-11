@@ -36,5 +36,16 @@ namespace pedidos_back_end.Controllers
             }
             return cliente;
         }
+
+        [HttpPost("autenticar")]
+        public async Task<IActionResult> Autenticar([FromForm] string email, [FromForm] string senha)
+        {
+            var cliente = await _service.BuscarPorEmail(email);
+            if (cliente == null || cliente.Senha != senha)
+            {
+                return Unauthorized(new { message = "Email ou senha incorretos" });
+            }
+            return Ok(new { message = "Autenticação bem-sucedida", cliente });
+        }
     }
 }
