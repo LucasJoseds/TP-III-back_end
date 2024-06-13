@@ -7,6 +7,6 @@ namespace pedidos_back_end.Helpers
 {
     public class JwtService
     {
-        
+        public string generate()
     }
 }
