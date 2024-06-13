@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<CardapioService>();
 builder.Services.AddScoped<ClienteService>();
 builder.Services.AddScoped<PedidoService>();
+builder.Services.AddScoped<JwtService>();
 builder.Services.AddDbContext<AppDbContext>(opttions =>
 {
     opttions.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));

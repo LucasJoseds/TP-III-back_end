@@ -4,23 +4,22 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace pedidos_back_end.Model
 {
-    public class Cliente
+    public class Cliente : Pessoa
     {
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id {get; set;}
-
-        public string? Nome {get; set;}
-        public string? Cpf {get;set;}
-        public string? Telefone {get;set;}
-
+    
         public string? Email {get;set;}
 
+         [JsonIgnore]
         public string? Senha {get;set;}
+
+        public string Role { get; set; } = "Cliente";
 
     }
 }
