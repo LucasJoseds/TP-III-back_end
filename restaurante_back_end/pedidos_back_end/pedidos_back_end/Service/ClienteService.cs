@@ -19,10 +19,18 @@ namespace pedidos_back_end.Service
         }
         public async Task<Cliente> AdicionarCliente(Cliente nCliente)
         {
-            _context.Add(nCliente);
+
+            var cliente = new Cliente { 
+                Nome = nCliente.Nome,
+                Cpf = nCliente.Cpf,
+                Telefone = nCliente.Telefone,
+                Email = nCliente.Email,
+                Senha = BCrypt.Net.BCrypt.HashPassword(nCliente.Senha)
+                };
+            _context.Add(cliente);
 
             await _context.SaveChangesAsync();
-            return nCliente;
+            return cliente;
         }
 
         public  async Task<Cliente> BuscarPorId(int Id)

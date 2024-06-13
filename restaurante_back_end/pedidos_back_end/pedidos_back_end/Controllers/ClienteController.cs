@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using pedidos_back_end.Model;
 using pedidos_back_end.Service;
+using pedidos_back_end.DTO;
 
 namespace pedidos_back_end.Controllers
 { 
@@ -36,16 +37,23 @@ namespace pedidos_back_end.Controllers
             }
             return cliente;
         }
+        
 
         [HttpPost("autenticar")]
-        public async Task<IActionResult> Autenticar([FromForm] string email, [FromForm] string senha)
+        public async Task<IActionResult> Autenticar([FromBody] LoginDTO dto)
         {
-            var cliente = await _service.BuscarPorEmail(email);
-            if (cliente == null || cliente.Senha != senha)
-            {
+            
+            var vCliente= await _service.BuscarPorEmail(dto.Email);
+            if (vCliente == null) {
                 return Unauthorized(new { message = "Email ou senha incorretos" });
             }
-            return Ok(new { message = "Autenticação bem-sucedida", cliente });
+
+            if(!BCrypt.Net.BCrypt.Verify(dto.Senha, vCliente.Senha)){
+
+                 return Unauthorized(new { message = "Email ou senha incorretos" });
+            } 
+        
+            return Ok(new { message = "Autenticação bem-sucedida", vCliente });
         }
     }
 }
