@@ -35,7 +35,7 @@ namespace pedidos_back_end.Service
             return cliente;
         }
 
-        public async Task<ClienteDTO> BuscarPorId(int Id)
+        public async Task<Cliente> BuscarPorId(int Id)
         {
             var cliente = await _context.Clientes.FindAsync(Id);
             if (cliente == null)
@@ -43,12 +43,7 @@ namespace pedidos_back_end.Service
                 return null; 
             }
 
-            return new ClienteDTO
-            {
-                Id = cliente.Id,
-                Nome = cliente.Nome,
-            
-            };
+           return cliente;
         }
 
         public async Task<Cliente> BuscarPorEmail(string email)

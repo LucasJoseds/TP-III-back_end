@@ -11,6 +11,6 @@ namespace pedidos_back_end.Service
     {
         Task<Cliente> AdicionarCliente(Cliente nCliente);
 
-        Task<ClienteDTO> BuscarPorId(int Id);
+        Task<Cliente> BuscarPorId(int Id);
     }
 }

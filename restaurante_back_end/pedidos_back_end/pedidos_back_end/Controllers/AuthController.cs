@@ -49,5 +49,14 @@ namespace pedidos_back_end.Controllers
 
             return Ok(new { message = "Autenticação bem-sucedida", jwt, vCliente });
         }
+
+
+        [HttpPost("logout")]  
+        public  IActionResult Logout(){
+
+            Response.Cookies.Delete("jwt");
+
+            return Ok(new {message = "Sucess"});
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace pedidos_back_end.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ClienteDTO>> BuscarCliente([FromQuery] int Id)
+        public async Task<ActionResult<Cliente>> BuscarCliente([FromQuery] int Id)
         {
 
             var cliente = await _service.BuscarPorId(Id);
@@ -50,17 +50,17 @@ namespace pedidos_back_end.Controllers
         public async Task<IActionResult> Cliente()
         {
 
-            var jwt = Request.Cookies["jwt"];
-            var token = _jwtService.Verify(jwt);
-            int clienteId = int.Parse(token.Issuer);
-            var clienteDTO = await _service.BuscarPorId(clienteId);
+                var jwt = Request.Cookies["jwt"];
+                var token = _jwtService.Verify(jwt);
+                int clienteId = int.Parse(token.Issuer);
+                var cliente = await _service.BuscarPorId(clienteId);
 
-            if (clienteDTO == null)
-            {
-                return NotFound();
-            }
+                if (cliente == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok(clienteDTO);
+                return Ok(cliente);
         }
     }
 }
