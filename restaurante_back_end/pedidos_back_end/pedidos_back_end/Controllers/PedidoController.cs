@@ -34,11 +34,13 @@ namespace pedidos_back_end.Controllers
        }
 
 
-       [HttpGet("cliente")]
-       public async Task<IEnumerable<Pedido>> ListarPedidosDoCliente([FromQuery]int idCliente){
+        [HttpGet("cliente")]
+        public async Task<IEnumerable<Pedido>> ListarPedidosDoCliente([FromQuery] int idCliente)
+        {
+            var pedidos = await _service.ListarPedidosCliente(idCliente);
 
-        return await _service.ListarPedidosCliente(idCliente);
-       }
+            return pedidos;
+        }
 
 
 
