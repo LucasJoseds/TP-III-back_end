@@ -62,5 +62,17 @@ namespace pedidos_back_end.Controllers
 
                 return Ok(cliente);
         }
+
+        [HttpPut("atualizar")]
+        public async Task<IActionResult> AtualizarCliente([FromBody] ClienteAtualizadoDTO clienteDTO)
+        {
+            var atualizado = await _service.AtualizarCliente(clienteDTO);
+            if (!atualizado)
+            {
+                return Unauthorized(new { message = "Senha atual inválida" });
+            }
+
+            return Ok(new { message = "Conta atualizada com sucesso" });
+        }
     }
 }

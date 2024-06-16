@@ -15,12 +15,11 @@ namespace pedidos_back_end.Service
 
         public ClienteService(AppDbContext appContext)
         {
-
             _context = appContext;
         }
+
         public async Task<Cliente> AdicionarCliente(Cliente nCliente)
         {
-
             var cliente = new Cliente
             {
                 Nome = nCliente.Nome,
@@ -40,10 +39,10 @@ namespace pedidos_back_end.Service
             var cliente = await _context.Clientes.FindAsync(Id);
             if (cliente == null)
             {
-                return null; 
+                return null;
             }
 
-           return cliente;
+            return cliente;
         }
 
         public async Task<Cliente> BuscarPorEmail(string email)
@@ -51,6 +50,33 @@ namespace pedidos_back_end.Service
             return await _context.Clientes.FirstOrDefaultAsync(c => c.Email == email);
         }
 
+        public async Task<bool> AtualizarCliente(ClienteAtualizadoDTO clienteDTO)
+        {
+            var cliente = await _context.Clientes.FindAsync(clienteDTO.Id);
+            if (cliente == null)
+            {
+                return false;
+            }
 
+            if (!BCrypt.Net.BCrypt.Verify(clienteDTO.SenhaAtual, cliente.Senha))
+            {
+                return false;
+            }
+
+            cliente.Nome = clienteDTO.Nome;
+            cliente.Cpf = clienteDTO.Cpf;
+            cliente.Telefone = clienteDTO.Telefone;
+            cliente.Email = clienteDTO.Email;
+
+            if (!string.IsNullOrEmpty(clienteDTO.NovaSenha))
+            {
+                cliente.Senha = BCrypt.Net.BCrypt.HashPassword(clienteDTO.NovaSenha);
+            }
+
+            _context.Clientes.Update(cliente);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }
