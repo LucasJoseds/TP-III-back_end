@@ -14,7 +14,9 @@ namespace pedidos_back_end.Service
         IEnumerable<Pedido> ListarPedidos();
        Task<IEnumerable<Pedido>> ListarPedidosCliente(int IdDoCliente);
 
-         
+        Task<Pedido> AtualizarStatusPedido(int pedidoId, StatusPedido novoStatus);
+
+
     }
     
 }

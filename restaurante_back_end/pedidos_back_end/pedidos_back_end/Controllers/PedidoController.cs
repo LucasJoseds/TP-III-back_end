@@ -42,7 +42,19 @@ namespace pedidos_back_end.Controllers
             return pedidos;
         }
 
-
+        [HttpPut("{id}/status")]
+        public async Task<ActionResult<Pedido>> AtualizarStatusPedido(int id, [FromBody] StatusPedido novoStatus)
+        {
+            try
+            {
+                var pedido = await _service.AtualizarStatusPedido(id, novoStatus);
+                return Ok(pedido);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
 }

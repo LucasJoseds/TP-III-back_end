@@ -69,5 +69,19 @@ namespace pedidos_back_end.Service
           
             return pedidos;
         }
+
+        public async Task<Pedido> AtualizarStatusPedido(int pedidoId, StatusPedido novoStatus)
+        {
+            var pedido = await _context.Pedidos.FindAsync(pedidoId);
+            if (pedido == null)
+            {
+                throw new Exception("Pedido não encontrado");
+            }
+
+            pedido.Status = novoStatus;
+            _context.Pedidos.Update(pedido);
+            await _context.SaveChangesAsync();
+            return pedido;
+        }
     }
 }
