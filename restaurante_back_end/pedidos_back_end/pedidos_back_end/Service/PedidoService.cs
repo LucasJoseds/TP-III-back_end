@@ -44,7 +44,7 @@ namespace pedidos_back_end.Service
             {
                 Cliente = cliente,
                 DataPedido = DateTime.UtcNow,
-                Status = StatusPedido.Preparando,
+                Status = StatusPedido.Aguardando,
                 Itens = novaLista,
                 NumeroMesa = pedido.NumeroMesa
             };
