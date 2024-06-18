@@ -19,6 +19,8 @@ namespace pedidos_back_end.Data
 
         public DbSet<Pedido> Pedidos { get; set; }
 
+        public DbSet<Funcionario> Funcionarios { get; set; }
+
         public DbSet<ItemPedido> ItensPedidos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

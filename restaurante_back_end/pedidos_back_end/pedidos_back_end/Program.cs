@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<CardapioService>();
 builder.Services.AddScoped<ClienteService>();
 builder.Services.AddScoped<PedidoService>();
+builder.Services.AddScoped<FuncionarioService>();
+
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddDbContext<AppDbContext>(opttions =>
 {
@@ -37,6 +39,12 @@ builder.Services.AddCors(options =>
                   .AllowCredentials();
 
         });
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("FuncionarioPolicy", policy =>
+        policy.RequireRole("Funcionario"));
 });
 
 var app = builder.Build();
