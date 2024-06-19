@@ -24,8 +24,21 @@ namespace pedidos_back_end.Controllers
             _funcionarioService=funcionarioService;
             
         }
-        
-         [HttpPost("adicionar")]
+
+        [HttpGet]
+        public async Task<ActionResult<Funcionario>> BuscarFuncionario([FromQuery] int Id)
+        {
+
+            var funcionario = await _funcionarioService.BuscarPorId(Id);
+
+            if (funcionario == null)
+            {
+                return NotFound(new { message = "Funcionario não encontrado" });
+            }
+            return funcionario;
+        }
+
+        [HttpPost("adicionar")]
         public async Task<Funcionario> Adicionar([FromForm] Funcionario funcionario)
         {
 

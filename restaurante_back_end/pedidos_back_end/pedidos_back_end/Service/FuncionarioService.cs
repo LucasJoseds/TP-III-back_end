@@ -35,8 +35,21 @@ namespace pedidos_back_end.Service
             await _context.SaveChangesAsync();
             return func;
         }
+        public async Task<Funcionario> BuscarPorEmail(string email)
+        {
+            return await _context.Funcionarios.FirstOrDefaultAsync(f => f.Email == email);
+        }
 
-       
-        
+        public async Task<Funcionario> BuscarPorId(int Id)
+        {
+            var funcionario = await _context.Funcionarios.FindAsync(Id);
+            if (funcionario == null)
+            {
+                return null;
+            }
+
+            return funcionario;
+        }
+
     }
 }

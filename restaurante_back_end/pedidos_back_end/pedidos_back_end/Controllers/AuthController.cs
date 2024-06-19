@@ -19,12 +19,12 @@ namespace pedidos_back_end.Controllers
 
         public AuthController(ClienteService service, JwtService jwtService)
         {
+           
             _service = service;
             _jwtService = jwtService;
         }
 
-
-
+     
         [HttpPost]
         public async Task<IActionResult> Autenticar([FromBody] LoginDTO dto)
         {
