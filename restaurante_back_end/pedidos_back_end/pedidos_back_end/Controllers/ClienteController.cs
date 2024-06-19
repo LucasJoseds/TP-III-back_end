@@ -74,5 +74,12 @@ namespace pedidos_back_end.Controllers
 
             return Ok(new { message = "Conta atualizada com sucesso" });
         }
+
+        [HttpGet("listar-todos")]
+        public Task<List<Cliente>> ListarTodos()
+        {
+
+            return _service.ListarTodos();
+        }
     }
 }

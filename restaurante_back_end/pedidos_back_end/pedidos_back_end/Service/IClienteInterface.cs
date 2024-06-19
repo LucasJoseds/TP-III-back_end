@@ -9,6 +9,7 @@ namespace pedidos_back_end.Service
 {
     public interface IClienteInterface
     {
+        Task<List<Cliente>> ListarTodos();
         Task<Cliente> AdicionarCliente(Cliente nCliente);
 
         Task<Cliente> BuscarPorId(int Id);

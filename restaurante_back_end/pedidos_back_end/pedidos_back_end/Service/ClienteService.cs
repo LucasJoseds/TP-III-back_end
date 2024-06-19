@@ -78,5 +78,10 @@ namespace pedidos_back_end.Service
 
             return true;
         }
+
+        public async Task<List<Cliente>> ListarTodos()
+        {
+            return await _context.Clientes.ToListAsync();
+        }
     }
 }
