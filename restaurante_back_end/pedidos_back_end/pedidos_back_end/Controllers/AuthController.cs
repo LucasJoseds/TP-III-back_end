@@ -29,6 +29,7 @@ namespace pedidos_back_end.Controllers
         public async Task<IActionResult> Autenticar([FromBody] LoginDTO dto)
         {
             var vCliente = await _service.BuscarPorEmail(dto.Email);
+            
             if (vCliente == null)
             {
                 return Unauthorized(new { message = "Email ou senha incorretos" });
@@ -38,6 +39,9 @@ namespace pedidos_back_end.Controllers
             {
                 return Unauthorized(new { message = "Email ou senha incorretos" });
             }
+
+
+
 
             var jwt = _jwtService.Generate(vCliente.Id);
 

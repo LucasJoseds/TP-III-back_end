@@ -554,3 +554,4 @@ C:\Users\lucas\OneDrive\Documentos\TP-III-back_end\restaurante_back_end\pedidos_
 C:\Users\lucas\OneDrive\Documentos\TP-III-back_end\restaurante_back_end\pedidos_back_end\pedidos_back_end\obj\Debug\net8.0\pedidos_back_end.genruntimeconfig.cache
 C:\Users\lucas\OneDrive\Documentos\TP-III-back_end\restaurante_back_end\pedidos_back_end\pedidos_back_end\obj\Debug\net8.0\ref\pedidos_back_end.dll
 C:\Users\07055338166\Documents\TP-III-back_end\restaurante_back_end\pedidos_back_end\pedidos_back_end\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\lucas\OneDrive\Documentos\TP-III-back_end\restaurante_back_end\pedidos_back_end\pedidos_back_end\bin\Debug\net8.0\BCrypt.Net-Next.dll

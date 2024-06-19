@@ -15,12 +15,21 @@ namespace pedidos_back_end.Controllers
     [Route("api/funcionario")]
     public class FuncionarioController : ControllerBase
     {
+
+
+        private readonly FuncionarioService _funcionarioService;
+
+        public FuncionarioController(FuncionarioService funcionarioService)
+        {
+            _funcionarioService=funcionarioService;
+            
+        }
         
          [HttpPost("adicionar")]
         public async Task<Funcionario> Adicionar([FromForm] Funcionario funcionario)
         {
 
-            return await _service.AdicionarFuncionario(funcionario);
+            return await _funcionarioService.AdicionarFuncionario(funcionario);
         }
     }
 }
